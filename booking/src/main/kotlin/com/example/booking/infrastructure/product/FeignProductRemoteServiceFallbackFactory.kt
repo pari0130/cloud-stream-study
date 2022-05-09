@@ -1,4 +1,4 @@
-package com.example.booking.service
+package com.example.booking.infrastructure.product
 
 import feign.hystrix.FallbackFactory
 import org.springframework.stereotype.Component

@@ -1,6 +1,5 @@
-package com.example.booking.service
+package com.example.booking.infrastructure.product
 
-import com.example.booking.service.FeignProductRemoteService
 import org.springframework.stereotype.Component
 
 @Component

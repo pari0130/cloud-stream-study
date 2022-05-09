@@ -1,4 +1,4 @@
-package com.example.booking.service
+package com.example.booking.infrastructure.product
 
 import org.springframework.cloud.openfeign.FeignClient
 import org.springframework.web.bind.annotation.PathVariable
