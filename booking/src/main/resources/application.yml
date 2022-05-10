@@ -4,6 +4,32 @@ server:
 spring:
   application:
     name: booking
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+          consumer-properties:
+            key.deserializer: org.apache.kafka.common.serialization.StringDeserializer
+            value.deserializer: com.example.booking.common.event.message.MessageDeSerializer
+          producer-properties:
+            key.serializer: org.apache.kafka.common.serialization.StringSerializer
+            value.serializer: com.example.booking.common.event.message.MessageSerializer
+      bindings: # package org.springframework.cloud.stream.config
+        input:
+          destination: booking-in
+          contentType: application/json
+        output:
+          destination: booking-out
+          contentType: application/json
+#
+#  kafka:
+#    consumer:
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: com.example.booking.common.event.message.MessageDeSerializer
+#    producer:
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: com.example.booking.common.event.message.MessageSerializer
 
 hystrix:
   command:

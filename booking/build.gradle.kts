@@ -27,8 +27,10 @@ dependencies {
     implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client") // 3. To use Eureka client
     implementation("org.springframework.cloud:spring-cloud-starter-netflix-ribbon")  // 2. To use ribbon
     implementation("org.springframework.cloud:spring-cloud-starter-netflix-hystrix") // 1. To use spring-cloud-hystrix
+    implementation("com.google.code.gson:gson")
 
-    implementation("org.springframework.cloud:spring-cloud-stream-binder-event") // event
+    // spring-cloud-starter-stream-kafka 동일
+    implementation("org.springframework.cloud:spring-cloud-stream-binder-kafka") // event
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
