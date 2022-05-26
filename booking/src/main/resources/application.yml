@@ -9,15 +9,16 @@ spring:
       kafka:
         binder:
           brokers: localhost:9092
-          consumer-properties:
-            key.deserializer: org.apache.kafka.common.serialization.StringDeserializer
-            value.deserializer: com.example.booking.common.event.message.MessageDeSerializer
-          producer-properties:
-            key.serializer: org.apache.kafka.common.serialization.StringSerializer
-            value.serializer: com.example.booking.common.event.message.MessageSerializer
+          # 시리얼라이저 설정을 하게되었을 때 MessageBuilder.withPayload 옵션을 통해 Header 설정을 추가하게 되면 시리얼라이징 오류가 발생하여 주석 처리함
+#          consumer-properties:
+#            key.deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#            value.deserializer: com.example.booking.common.event.message.MessageDeSerializer
+#          producer-properties:
+#            key.serializer: org.apache.kafka.common.serialization.StringSerializer
+#            value.serializer: com.example.booking.common.event.message.MessageSerializer
       bindings: # package org.springframework.cloud.stream.config
         input:
-          destination: booking-in
+          destination: booking-out
           contentType: application/json
         output:
           destination: booking-out
